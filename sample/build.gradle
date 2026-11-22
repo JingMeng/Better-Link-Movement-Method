@@ -1,15 +1,17 @@
 apply plugin: 'com.android.application'
 
 repositories {
-  jcenter()
+  google()
+  mavenCentral()
 }
 
 android {
+  namespace 'me.saket.bettermovementmethod.sample'
   compileSdkVersion versions.compileSdk
 
   defaultConfig {
     applicationId 'me.saket.betterlinkmovement.sample'
-    minSdkVersion 23
+    minSdk 23
     targetSdkVersion versions.targetSdk
     versionCode versions.libraryVersionCode
     versionName versions.libraryVersionName
@@ -23,8 +25,8 @@ android {
   }
 
   compileOptions {
-    targetCompatibility 1.8
-    sourceCompatibility 1.8
+    targetCompatibility JavaVersion.VERSION_11
+    sourceCompatibility JavaVersion.VERSION_11
   }
 
   productFlavors {
@@ -34,3 +36,4 @@ android {
 dependencies {
   implementation project(path: ':better-link-movement-method')
 }
+
